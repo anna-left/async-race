@@ -1,0 +1,54 @@
+
+
+const automobile = document.querySelector('.automobile');
+const startBtn = document.querySelector('.start-btn');
+const stopBtn = document.querySelector('.stop-btn');
+const track = document.querySelector('.track');
+const colorAuto = document.querySelector('.color-auto');
+const rightPadding = 120;
+const leftPadding = 50;
+
+function draw(curTime, curSpeed, curTrackLength) {
+    const curLeft = Math.min(curTime * curSpeed, curTrackLength) + leftPadding;
+    return curLeft;
+}
+
+if (colorAuto) {
+    colorAuto.addEventListener('change', () => {
+        automobile.style.fill = colorAuto.value;
+    })
+}
+
+let timer;
+// const flag = document.querySelector('.flag');
+const speed = 0.3;
+if (startBtn && automobile && stopBtn) {
+    startBtn.addEventListener('click', () => {
+        let start = Date.now(); // запомнить время начала
+        let trackLength = track.offsetWidth - rightPadding;
+        let left = 0;
+        // let left = automobile.style.left;
+
+        timer = setInterval(function () {
+            // сколько времени прошло с начала анимации?
+            let timePassed = Date.now() - start;
+
+            if (left >= trackLength) {
+                clearInterval(timer); // закончить анимацию в конце дистанции
+                return;
+            }
+
+            // отрисовать анимацию на момент timePassed, прошедший с начала анимации
+            // draw(timePassed);
+            left = draw(timePassed, speed, trackLength);
+            automobile.style.left = left + 'px';
+
+        }, 1);
+
+    });
+
+    stopBtn.addEventListener('click', () => {
+        clearInterval(timer);
+    });
+}
+

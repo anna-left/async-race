@@ -1,0 +1,153 @@
+:root {
+  --green: #d6ea7c;
+}
+
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 100vw;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.garage-btn,
+.winners-btn {
+  width: 100px;
+  height: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  /* border: 2px solid rgb(113, 125, 139); */
+  box-shadow: 1px 1px 1px rgb(153, 152, 69);
+  border-radius: 10%;
+}
+
+.garage-header {
+  margin-bottom: 20px;
+  /* margin-top: 20px; */
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.new-name{
+  height: 15px;
+  border: none;
+  padding: 5px;
+}
+
+.color-auto{
+  width: 56px;
+  height: 15px;
+  border: none;
+}
+
+.track {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-title {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  margin-top: 5px;
+  align-items: center;
+  gap: 3px;
+}
+
+.remove,
+.select, .create-btn {
+  width: 60px;
+  height: 15px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  /* border: 2px solid rgb(113, 125, 139); */
+  box-shadow: 2px 2px 2px rgb(153, 152, 69);
+}
+
+.name {
+  padding-left: 5px;
+  color: var(--green);
+}
+
+.track-container {
+  width: 100%;
+  border-bottom: 3px dashed white;
+  height: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.automobile {
+  position: absolute;
+  fill: rgb(255, 255, 255);
+  width: 200px;
+  height: 80px;
+  left: 50px;
+  bottom: 0;
+}
+
+.flag {
+  fill: rgb(212, 2, 2);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 120px;
+  transform: scale(0.9);
+  /* bottom: 5px; */
+}
+
+.draw-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.start-btn,
+.stop-btn {
+  width: 20px;
+  height: 20px;
+  /* font-size: 1rem; */
+  font-style: bold;
+  border: 1.5px solid;
+  border-radius: 20%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn {
+  color: var(--green);
+}
+
+.stop-btn {
+  color: rgb(214, 217, 219);
+}
+
+.hide {
+  display: none;
+}
