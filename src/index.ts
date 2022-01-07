@@ -3,6 +3,7 @@ import './styles/normalize.css';
 import { fillPage } from './components/fillPage';
 import { getGarage } from './components/getGarage';
 import { getWinners } from './components/getWinners';
+import { startRace } from './components/startRace';
 import { Auto } from './components/classes/auto';
 import { Winner } from './components/classes/winner';
 import { GarageApi } from './components/classes/garageApi';
@@ -20,5 +21,6 @@ async function start() {
 }
 
 start();
+document.querySelector('.race-btn')?.addEventListener('click', () => startRace());
 
 export { garage, winners, garageApi };
