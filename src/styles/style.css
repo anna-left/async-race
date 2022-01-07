@@ -1,5 +1,6 @@
 :root {
   --green: #d6ea7c;
+  --gray: #babd9a;
 }
 
 body {
@@ -21,8 +22,10 @@ body {
 }
 
 .garage-btn,
-.winners-btn {
-  width: 100px;
+.winners-btn,
+.race-btn,
+.reset-btn {
+  width: 120px;
   height: 20px;
   font-size: 0.8rem;
   font-weight: bold;
@@ -34,10 +37,16 @@ body {
   /* border: 2px solid rgb(113, 125, 139); */
   box-shadow: 1px 1px 1px rgb(153, 152, 69);
   border-radius: 10%;
+  cursor: pointer;
+
+}
+
+[class*='-btn']:hover {
+  filter: brightness(1.5);
 }
 
 .garage-header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   /* margin-top: 20px; */
   display: flex;
   align-content: center;
@@ -47,6 +56,7 @@ body {
 
 .new-name{
   height: 15px;
+  width: 120px;
   border: none;
   padding: 5px;
 }
@@ -72,9 +82,11 @@ body {
   gap: 3px;
 }
 
-.remove,
-.select, .create-btn {
-  width: 60px;
+.remove-btn, 
+.create-btn,
+.update-btn,
+.select-btn {
+  width: 56px;
   height: 15px;
   font-size: 0.6rem;
   font-weight: bold;
@@ -82,12 +94,13 @@ body {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  /* border: 2px solid rgb(113, 125, 139); */
   box-shadow: 2px 2px 2px rgb(153, 152, 69);
+  cursor: pointer;
+  background-color: var(--gray);
 }
 
 .name {
-  padding-left: 5px;
+  padding-left: 10px;
   color: var(--green);
 }
 
