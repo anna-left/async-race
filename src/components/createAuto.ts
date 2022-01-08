@@ -1,6 +1,7 @@
 import { garage } from '../index';
 import { startAuto } from './startAuto';
 import { stopAuto } from './stopAuto';
+import { changeСounter } from './changeСounter';
 
 function createAuto(index: number) {
   const parent = document.querySelector('.garage') as HTMLElement;
@@ -29,6 +30,7 @@ function createAuto(index: number) {
     stopAuto(index);
   });
   parent?.appendChild(clone);
+  changeСounter();
 }
 
 export { createAuto };
