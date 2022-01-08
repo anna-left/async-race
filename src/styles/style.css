@@ -24,7 +24,8 @@ body {
 .garage-btn,
 .winners-btn,
 .race-btn,
-.reset-btn {
+.reset-btn,
+.generate-btn {
   width: 120px;
   height: 20px;
   font-size: 0.8rem;
@@ -38,7 +39,6 @@ body {
   box-shadow: 1px 1px 1px rgb(153, 152, 69);
   border-radius: 10%;
   cursor: pointer;
-
 }
 
 [class*='-btn']:hover {
@@ -55,7 +55,7 @@ body {
 }
 
 .new-name{
-  height: 15px;
+  height: 20px;
   width: 120px;
   border: none;
   padding: 5px;
@@ -63,7 +63,7 @@ body {
 
 .color-auto{
   width: 56px;
-  height: 15px;
+  height: 20px;
   border: none;
 }
 
@@ -87,7 +87,7 @@ body {
 .update-btn,
 .select-btn {
   width: 56px;
-  height: 15px;
+  height: 20px;
   font-size: 0.6rem;
   font-weight: bold;
   display: flex;

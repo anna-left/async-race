@@ -6,5 +6,6 @@ const path = {
 const rightPaddingTrack = 40;
 const leftPaddingTrack = 50;
 const velocityCalculationFactor = 20000;
+const numberCarsCreated = 100;
 
-export { ASYNC_RACE_API_URL, path, rightPaddingTrack, leftPaddingTrack, velocityCalculationFactor };
+export { ASYNC_RACE_API_URL, path, rightPaddingTrack, leftPaddingTrack, velocityCalculationFactor, numberCarsCreated };
