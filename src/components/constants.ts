@@ -3,7 +3,8 @@ const path = {
   garage: '/garage',
   winners: '/winners ',
 };
-const rightPadding = 40;
-const leftPadding = 50;
+const rightPaddingTrack = 40;
+const leftPaddingTrack = 50;
+const velocityCalculationFactor = 20000;
 
-export { ASYNC_RACE_API_URL, path, rightPadding, leftPadding };
+export { ASYNC_RACE_API_URL, path, rightPaddingTrack, leftPaddingTrack, velocityCalculationFactor };
