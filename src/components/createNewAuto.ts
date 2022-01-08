@@ -6,7 +6,7 @@ async function createNewAuto(name: string, color: string) {
   const newAuto = await promise;
   if (newAuto) {
     garage.push(newAuto);
-    createAuto(newAuto.id - 1);
+    createAuto(newAuto.id);
   }
 }
 

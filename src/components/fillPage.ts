@@ -4,7 +4,7 @@ import { garage } from '../index';
 
 async function fillPage() {
   for (let i = 0; i < garage.length; i++) {
-    createAuto(i);
+    createAuto(garage[i].id);
   }
 }
 

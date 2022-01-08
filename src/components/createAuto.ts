@@ -2,6 +2,7 @@ import { garage } from '../index';
 import { startAuto } from './startAuto';
 import { stopAuto } from './stopAuto';
 import { changeСounter } from './changeСounter';
+import { removeAuto } from './removeAuto';
 
 function createAuto(index: number) {
   const parent = document.querySelector('.garage') as HTMLElement;
@@ -22,12 +23,13 @@ function createAuto(index: number) {
   }
   garage[index].carElement = clone;
   clone.querySelector('.start-btn')?.addEventListener('click', () => {
-    // console.log(e);
     startAuto(index);
   });
   clone.querySelector('.stop-btn')?.addEventListener('click', () => {
-    // console.log(e);
     stopAuto(index);
+  });
+  clone.querySelector('.remove-btn')?.addEventListener('click', () => {
+    removeAuto(index);
   });
   parent?.appendChild(clone);
   changeСounter();
