@@ -4,7 +4,7 @@ type MakeRequest = {
 };
 
 const checkIsResponseOk = (response: Response) => {
-  if (response.ok && response.status === 200) {
+  if (response.ok && (response.status === 200 || response.status === 201)) {
     return response.json();
   }
 

@@ -1,8 +1,8 @@
 import { garage } from '../index';
 import { startAuto } from './startAuto';
+import { stopAuto } from './stopAuto';
 
 function createAuto(index: number) {
-  // const garage = await getGarage();
   const parent = document.querySelector('.garage') as HTMLElement;
   const template = document.querySelector('.template .track') as HTMLElement;
   const clone = template.cloneNode(true) as HTMLElement;
@@ -23,6 +23,10 @@ function createAuto(index: number) {
   clone.querySelector('.start-btn')?.addEventListener('click', () => {
     // console.log(e);
     startAuto(index);
+  });
+  clone.querySelector('.stop-btn')?.addEventListener('click', () => {
+    // console.log(e);
+    stopAuto(index);
   });
   parent?.appendChild(clone);
 }
