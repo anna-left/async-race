@@ -9,19 +9,20 @@ function createAuto(index: number) {
   const template = document.querySelector('.template .track') as HTMLElement;
   const clone = template.cloneNode(true) as HTMLElement;
   const nameElement = clone.querySelector('.name');
-  if (!garage[index]) {
+  const curAutoElement = garage.find((car) => Number(car.id) === index);
+  if (!curAutoElement) {
     return;
   }
   if (nameElement) {
-    nameElement.innerHTML = garage[index].name;
+    nameElement.innerHTML = curAutoElement.name;
   }
   clone.setAttribute('data-num', String(index));
   const automobile = clone.querySelector('.automobile') as HTMLElement;
   if (automobile) {
-    automobile.style.fill = garage[index].color;
+    automobile.style.fill = curAutoElement.color;
     automobile.setAttribute('data-num', String(index));
   }
-  garage[index].carElement = clone;
+  curAutoElement.carElement = clone;
   clone.querySelector('.start-btn')?.addEventListener('click', () => {
     startAuto(index);
   });
