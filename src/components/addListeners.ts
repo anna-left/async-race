@@ -1,6 +1,7 @@
 import { startRace } from './startRace';
 import { createNewAuto } from './createNewAuto';
 import { generateCars } from './generateCars';
+import { leftPaddingTrack } from './constants';
 
 function addListeners() {
   document.querySelector('.race-btn')?.addEventListener('click', () => startRace());
@@ -11,6 +12,15 @@ function addListeners() {
   });
   document.querySelector('.generate-btn')?.addEventListener('click', () => {
     generateCars();
+  });
+  document.querySelector('.reset-btn')?.addEventListener('click', () => {
+    const garageTrack = document.querySelectorAll('.garage .track');
+    if (garageTrack) {
+      for (let i = 0; i < garageTrack.length; i++) {
+        const automobile = garageTrack[i].querySelector('.automobile') as HTMLElement;
+        automobile.style.left = leftPaddingTrack + 'px';
+      }
+    }
   });
 }
 

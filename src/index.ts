@@ -6,7 +6,7 @@ import { getWinners } from './components/getWinners';
 import { Auto } from './components/classes/auto';
 import { Winner } from './components/classes/winner';
 import { GarageApi } from './components/classes/garageApi';
-import { EngineApi } from './components/classes/engiesApi';
+import { EngineApi } from './components/classes/enginesApi';
 import { addListeners } from './components/addListeners';
 
 const garageApi = new GarageApi();
