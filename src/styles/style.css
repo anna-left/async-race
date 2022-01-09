@@ -118,8 +118,8 @@ body {
 .automobile {
   position: absolute;
   fill: rgb(255, 255, 255);
-  width: 200px;
-  height: 80px;
+  width: 100px;
+  height: 40px;
   left: 50px;
   bottom: 0;
 }
