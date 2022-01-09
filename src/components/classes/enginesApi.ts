@@ -6,14 +6,21 @@ export class EngineApi {
 
   startedCar = (id: number) => {
     return makeRequest({
-      url: `${this.url}/?id=${id + 1}&status=started`,
+      url: `${this.url}/?id=${id}&status=started`,
+      method: 'PATCH',
+    });
+  };
+
+  stoppedCar = (id: number) => {
+    return makeRequest({
+      url: `${this.url}/?id=${id}&status=stopped`,
       method: 'PATCH',
     });
   };
 
   driveCar = (id: number) => {
     return makeRequest({
-      url: `${this.url}/?id=${id + 1}&status=drive`,
+      url: `${this.url}/?id=${id}&status=drive`,
       method: 'PATCH',
     });
   };
