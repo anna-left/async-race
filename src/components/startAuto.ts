@@ -1,13 +1,8 @@
 import { garage, engineApi } from '../index';
 import { leftPaddingTrack, rightPaddingTrack, velocityCalculationFactor } from './constants';
 
-function draw(curTime: number, velocity: number, curTrackLength: number) {
-  const curLeft = Math.min(curTime * velocity, curTrackLength) + leftPaddingTrack;
-  return curLeft;
-}
-
 async function startAuto(index: number) {
-  const curAutoElement = garage.find((car) => Number(car.id) === index + 1);
+  const curAutoElement = garage.find((car) => Number(car.id) === index);
   const track = document.querySelector(`.track[data-num="${String(index)}"]`) as HTMLElement;
   const automobile = track.querySelector('.automobile') as HTMLElement;
   if (!curAutoElement || !track || !automobile) {
@@ -15,27 +10,38 @@ async function startAuto(index: number) {
     return;
   }
 
-  const promise = engineApi.startCar(index);
-  const answer = await promise;
-  const velocity = answer.distance / answer.velocity / velocityCalculationFactor;
+  const promiseStart = engineApi.startedCar(index);
+  const answerStart = await promiseStart;
+  const velocity = (answerStart.distance / answerStart.velocity) * velocityCalculationFactor;
+  // let answerStop;
 
   const start = Date.now(); // запомнить время начала
   const trackLength = track.offsetWidth - rightPaddingTrack - leftPaddingTrack;
   let left = 0;
 
-  const timer = window.setInterval(function () {
+  const timer = window.setInterval(async function () {
+    //поломка двигателя
+    // console.log(answerStop);
+
     // сколько времени прошло с начала анимации?
     const timePassed = Date.now() - start;
 
     if (left >= trackLength) {
       clearInterval(timer); // закончить анимацию в конце дистанции
+      const promiseStop = engineApi.stoppedCar(index);
+      // const answerStop = await promiseStop;
+      await promiseStop;
+      // console.log(answerStop);
       return;
     }
 
     // отрисовать анимацию на момент timePassed, прошедший с начала анимации
-    left = draw(timePassed, velocity, trackLength);
+    left = Math.min(timePassed * velocity, trackLength) + leftPaddingTrack;
     automobile.style.left = left + 'px';
   }, 1);
+
+  // const promiseStop = engineApi.stoppedCar(index);
+  // answerStop = await promiseStop;
   // requestEngineDrive().catch(error => clearInterval(timer));
   curAutoElement.timer = timer;
 }
